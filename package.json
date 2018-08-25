@@ -1,8 +1,8 @@
 {
   "name": "iguana",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A javascript libary created to ease the development process.",
-  "main": "iguana.js",
+  "main": "dist/iguana.min.js",
   "scripts": {
     "test": "node test/test.js"
   },
