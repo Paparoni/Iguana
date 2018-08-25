@@ -1,2 +1,2 @@
-# Candy-Core
-JavaScript classes and functions, improving random stuff
+# Iguana
+A lightweight JavaScript library with useful functions and short cuts.
