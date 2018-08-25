@@ -1,0 +1,26 @@
+{
+  "name": "iguana",
+  "version": "0.0.1",
+  "description": "A javascript libary created to ease the development process.",
+  "main": "iguana.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paparoni/iguana.git"
+  },
+  "keywords": [
+    "javascript",
+    "newt",
+    "library",
+    "easy",
+    "lightweight"
+  ],
+  "author": "Antwaun Tune",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Paparoni/iguana/issues"
+  },
+  "homepage": "https://github.com/Paparoni/iguana#readme"
+}
