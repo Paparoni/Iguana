@@ -4,7 +4,7 @@
   "description": "A javascript libary created to ease the development process.",
   "main": "dist/iguana.min.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "jshint src/iguana.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Paparoni/iguana/issues"
   },
-  "homepage": "https://github.com/Paparoni/iguana#readme"
+  "homepage": "https://github.com/Paparoni/iguana#readme",
+  "dependencies": {
+    "jshint": "^2.9.6"
+  }
 }
