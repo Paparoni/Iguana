@@ -3,7 +3,7 @@
         constructor() {
             super();
             for (let i = 0; i < arguments.length; i++) {
-                this[i] = arguments[i]
+                this[i] = arguments[i];
             }
         }
 
@@ -24,7 +24,7 @@
                 let temp_list = new List();
                 this.forEach(function(i) {
                     temp_list.push(i);
-                })
+                });
                 for (let i = 0; i < arguments[0]; i++) {
                     let random_val = temp_list[Math.floor(Math.random() * temp_list.length)];
                     result.push(random_val);
@@ -42,9 +42,9 @@
             this.List = class extends Array {
                 constructor() {
                     super();
-                    this.origin = new List()
+                    this.origin = new List();
                     for (let i = 0; i < arguments.length; i++) {
-                        this[i] = arguments[i]
+                        this[i] = arguments[i];
                         this.origin.push(arguments[i]);
 
                     }
@@ -68,7 +68,7 @@
                         let temp_list = new List();
                         this.forEach(function(i) {
                             temp_list.push(i);
-                        })
+                        });
                         for (let i = 0; i < arguments[0]; i++) {
                             let random_val = temp_list[Math.floor(Math.random() * temp_list.length)];
                             result.push(random_val);
@@ -80,7 +80,7 @@
 
                 }
 
-            }
+            };
         }
     }
 
