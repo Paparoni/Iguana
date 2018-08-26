@@ -1,7 +1,7 @@
 # Iguana [![Build Status](https://travis-ci.com/Paparoni/Iguana.svg?branch=master)](https://travis-ci.com/Paparoni/Iguana)
 >A lightweight JavaScript library with useful functions, custom classes and shortcuts
 
-View Documentation
+[View Documentation](https://paparoni.github.io/Iguana/)
 
 ## Install with npm
 In terminal:
