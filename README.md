@@ -21,3 +21,7 @@ const I = new iguana();
    ```HTML
     <script src="iguana.min.js"></script>
    ```
+ - And in your JS File:
+ ```javascript
+ const I = new Iguana();
+ ```
