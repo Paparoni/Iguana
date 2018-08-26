@@ -19,4 +19,5 @@ const I = new iguana();
  - Include this in your HTML file:
  
    ```HTML
-    <script src="iguana.min.js"></script>```
+    <script src="iguana.min.js"></script>
+   ```
