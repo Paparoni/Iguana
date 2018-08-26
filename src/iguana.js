@@ -22,7 +22,7 @@
              * => "foo"
              * => "bar"
              */
-            this.origin = new List();
+            this.origin = [];
             for (let i = 0; i < arguments.length; i++) {
                 this[i] = arguments[i];
                 this.origin.push(arguments[i]);
