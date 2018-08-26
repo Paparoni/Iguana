@@ -1,0 +1,1 @@
+bin/documentation.js build src/** -f html -o docs
