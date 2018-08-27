@@ -4,7 +4,11 @@
   "description": "A javascript libary created to ease the development process.",
   "main": "dist/iguana.min.js",
   "scripts": {
-    "test": "jshint src/iguana.js"
+    "test": "jshint src/iguana.js",
+    "pre_build": "minify src -d dist",
+    "mid_build": "/home/ubuntu/.nvm/versions/node/v6.11.2/lib/node_modules/documentation/bin/documentation.js build src/** -f html -o docs",
+    "post_build": "node build.js",
+    "build": "npm run pre_build && npm run mid_build && npm run post_build"
   },
   "repository": {
     "type": "git",
@@ -25,5 +29,8 @@
   "homepage": "https://github.com/Paparoni/iguana#readme",
   "dependencies": {
     "jshint": "^2.9.6"
+  },
+  "devDependencies": {
+    "babel-minify": "^0.4.3"
   }
 }

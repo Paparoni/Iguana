@@ -1,8 +1,10 @@
 class Iguana {
     constructor() {
         this.List = List;
+        this.HTTP = HTTP;
     }
 }
+
 /**
  * List class
  * @example
@@ -35,7 +37,8 @@ class List extends Array {
         }
     }
     /**
-     * This function removes an element from a list
+     * this.delete
+     * @description This function removes an element from a list
      * @returns void.
      * @example
      * let myList = new Iguana.List(1, 2, "foo", "bar");
@@ -50,7 +53,8 @@ class List extends Array {
     }
 
     /**
-     * This function returns a random element from a List.
+     * this.shuffle
+     * @description This function returns a random element from a List.
      * @param {number} num optional parameter, if given this function will return a new List with randomized elements this parameter will define the number of elements that will be in the shuffled list.
      * @returns {any}
      * @returns {List}
@@ -88,6 +92,86 @@ class List extends Array {
 
     }
 
+}
+/**
+ * HTTP class
+ * @description A useful class for simplifying xmlhttp requests and posts.
+ * NOTE: This is not availiable in a NodeJS environment.
+ * @param {string} server The server or url you will be making your requests or posts to. 
+ * @example
+ * let myHttp = new Iguana.HTTP("https://jsonplaceholder.typicode.com/todos/1");
+ * console.log(myHttp.server);
+ * => https://jsonplaceholder.typicode.com/todos/1
+ * 
+ */
+class HTTP {
+    constructor(server) {
+        this.server = server;
+        let isNode = new Function("try {return this===global;}catch(e){return false;}");
+        if (isNode()) {
+            throw new Error("HTTP Class not availiable in a node environment.")
+        }
+    }
+    /**
+     * this.request
+     * @description This function performs an asyncronous http get request on the {server}
+     * @async
+     * @param {object} header optional parameter to attach a header to the request
+     * @example
+     * let myHttp = new Iguana.HTTP("https://jsonplaceholder.typicode.com/todos/1");
+     * // This function returns a promise which you can access the data using then
+     * myHttp.request().then(function(data){
+     *      console.log(data)
+     *      }, function(error){
+     *  console.log(error);
+     * })
+     * => {
+     * "userId": 1,
+     * "id": 1,
+     * "title": "delectus aut autem",
+     * "completed": false
+     * }
+     * // Headers must be placed in a dictionary object.
+     * myHttp.request({'User-Agent': 'Mozilla/5.0'}).then(function(data){
+     *      console.log(data)
+     *      }, function(error){
+     *  console.log(error);
+     * })
+     * => {
+     * "userId": 1,
+     * "id": 1,
+     * "title": "delectus aut autem",
+     * "completed": false
+     * }
+     */
+    request(header) {
+        let url = this.server
+        header = header || {};
+        return new Promise(function(success, error) {
+            let http = new XMLHttpRequest();
+            http.onreadystatechange = function() {
+                if (http.readyState == 4 && http.status == 200) {
+                    success(http.responseText);
+                }
+                http.onerror = function(e) {
+                    error(new Error("Something with wrong. Status: " + http.status));
+                }
+            }
+
+            http.open("GET", url, true);
+            if (Object.keys(header).length !== 0) {
+                let h = "";
+                let v = "";
+                for (let key in Object.keys(header)) {
+                    h = key;
+                    v = header[key];
+                }
+                http.setRequestHeader(h, v);
+            };
+            http.send(null);
+
+        });
+    }
 }
 
 module.exports = Iguana;

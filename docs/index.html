@@ -64,6 +64,34 @@
                 
                 </li>
               
+                
+                <li><a
+                  href='#http'
+                  class=" toggle-sibling">
+                  HTTP
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#httprequest'
+                        class='regular pre-open'>
+                        #request
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -350,6 +378,175 @@ myList.forEach(<span class="hljs-function"><span class="hljs-keyword">function</
 <span class="hljs-comment">// This will return a new a list with 3 random elements from the original list</span>
 <span class="hljs-built_in">console</span>.log(myList.shuffle(<span class="hljs-number">3</span>))
 =&gt; List [<span class="hljs-string">"fizz"</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"bar"</span>]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='http'>
+      HTTP
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A useful class for simplifying xmlhttp requests and posts.
+NOTE: This is not availiable in a NodeJS environment.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>new HTTP(server: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>server</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The server or url you will be making your requests or posts to.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myHttp = <span class="hljs-keyword">new</span> Iguana.HTTP(<span class="hljs-string">"https://jsonplaceholder.typicode.com/todos/1"</span>);
+<span class="hljs-built_in">console</span>.log(myHttp.server);
+=&gt; https:<span class="hljs-comment">//jsonplaceholder.typicode.com/todos/1</span></pre>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='httprequest'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>request(header)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>This function performs an asyncronous http get request on the {server}</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>request(header: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>header</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    optional parameter to attach a header to the request
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myHttp = <span class="hljs-keyword">new</span> Iguana.HTTP(<span class="hljs-string">"https://jsonplaceholder.typicode.com/todos/1"</span>);
+<span class="hljs-comment">// This function returns a promise which you can access the data using then</span>
+myHttp.request().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+     <span class="hljs-built_in">console</span>.log(data)
+     }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+ <span class="hljs-built_in">console</span>.log(error);
+})
+=&gt; {
+<span class="hljs-string">"userId"</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"delectus aut autem"</span>,
+<span class="hljs-string">"completed"</span>: <span class="hljs-literal">false</span>
+}
+<span class="hljs-comment">// Headers must be placed in a dictionary object.</span>
+myHttp.request({<span class="hljs-string">'User-Agent'</span>: <span class="hljs-string">'Mozilla/5.0'</span>}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+     <span class="hljs-built_in">console</span>.log(data)
+     }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+ <span class="hljs-built_in">console</span>.log(error);
+})
+=&gt; {
+<span class="hljs-string">"userId"</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+<span class="hljs-string">"title"</span>: <span class="hljs-string">"delectus aut autem"</span>,
+<span class="hljs-string">"completed"</span>: <span class="hljs-literal">false</span>
+}</pre>
     
   
 
