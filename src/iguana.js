@@ -107,9 +107,10 @@ class List extends Array {
 class HTTP {
     constructor(server) {
         this.server = server;
-        let isNode = new Function("try {return this===global;}catch(e){return false;}");
+
+        let isNode = function(){try {return this===global;}catch(e){return false;}};
         if (isNode()) {
-            throw new Error("HTTP Class not availiable in a node environment.")
+            throw new Error("HTTP Class not availiable in a node environment.");
         }
     }
     /**
@@ -145,7 +146,7 @@ class HTTP {
      * }
      */
     request(header) {
-        let url = this.server
+        let url = this.server;
         header = header || {};
         return new Promise(function(success, error) {
             let http = new XMLHttpRequest();
@@ -155,8 +156,8 @@ class HTTP {
                 }
                 http.onerror = function(e) {
                     error(new Error("Something with wrong. Status: " + http.status));
-                }
-            }
+                };
+            };
 
             http.open("GET", url, true);
             if (Object.keys(header).length !== 0) {
@@ -167,7 +168,7 @@ class HTTP {
                     v = header[key];
                 }
                 http.setRequestHeader(h, v);
-            };
+            }
             http.send(null);
 
         });
