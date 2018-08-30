@@ -26,6 +26,16 @@
               
                 
                 <li><a
+                  href='#isnode'
+                  class="">
+                  isNode
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#list'
                   class=" toggle-sibling">
                   List
@@ -107,6 +117,72 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='isnode'>
+      isNode
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>isNode
+Returns true or false whether the enviroment is NodeJS</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>isNode</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-built_in">console</span>.log(iguana.isNode());
+=&gt; <span class="hljs-literal">true</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='list'>
       List
     </h3>
@@ -150,7 +226,9 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> Iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 <span class="hljs-built_in">console</span>.log(myList[<span class="hljs-number">0</span>]);
 =&gt; <span class="hljs-number">1</span></pre>
     
@@ -202,7 +280,9 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> Iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 myList.push(<span class="hljs-string">"fizz"</span>);
 <span class="hljs-comment">// "fizz" is not printed to the console because it was added to the List after it was defined.</span>
 myList.origin.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{ <span class="hljs-built_in">console</span>.log(element) });
@@ -284,7 +364,9 @@ myList.origin.forEach(<span class="hljs-function"><span class="hljs-keyword">fun
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> Iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 myList.delete(<span class="hljs-string">"bar"</span>);
 myList.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{ <span class="hljs-built_in">console</span>.log(element) });
 =&gt; <span class="hljs-number">1</span>
@@ -371,7 +453,9 @@ myList.forEach(<span class="hljs-function"><span class="hljs-keyword">function</
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> Iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>, <span class="hljs-string">"fizz"</span>, <span class="hljs-number">3</span>);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>, <span class="hljs-string">"fizz"</span>, <span class="hljs-number">3</span>);
 <span class="hljs-built_in">console</span>.log(myList.shuffle())
 =&gt; <span class="hljs-string">"foo"</span>
 <span class="hljs-comment">// If shuffle is given a number as a parameter</span>

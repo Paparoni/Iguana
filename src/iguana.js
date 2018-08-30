@@ -2,13 +2,35 @@ class Iguana {
     constructor() {
         this.List = List;
         this.HTTP = HTTP;
+        this.isNode = isNode;
     }
 }
+/**
+ * isNode
+ * Returns true or false whether the enviroment is NodeJS
+ * @returns {boolean}
+ * @example
+ * const ig = require('./src/iguana.js')
+ * iguana = new ig();
+ * console.log(iguana.isNode());
+ * => true
+ * 
+ * 
+ */
+const isNode = function() {
+    try {
+        return this === global;
+    } catch (e) {
+        return false;
+    }
+};
 
 /**
  * List class
  * @example
- * let myList = new Iguana.List(1, 2, "foo", "bar");
+ * const ig = require('./src/iguana.js')
+ * iguana = new ig();
+ * let myList = new iguana.List(1, 2, "foo", "bar");
  * console.log(myList[0]);
  * => 1
  * 
@@ -20,7 +42,9 @@ class List extends Array {
          * List.origin
          * @desc a List containing all of the elements added at the start of the list
          * @example
-         * let myList = new Iguana.List(1, 2, "foo", "bar");
+         * const ig = require('./src/iguana.js')
+         * iguana = new ig();
+         * let myList = new iguana.List(1, 2, "foo", "bar");
          * myList.push("fizz");
          * // "fizz" is not printed to the console because it was added to the List after it was defined.
          * myList.origin.forEach(function(element){ console.log(element) });
@@ -41,7 +65,9 @@ class List extends Array {
      * @description This function removes an element from a list
      * @returns void.
      * @example
-     * let myList = new Iguana.List(1, 2, "foo", "bar");
+     * const ig = require('./src/iguana.js')
+     * iguana = new ig();
+     * let myList = new iguana.List(1, 2, "foo", "bar");
      * myList.delete("bar");
      * myList.forEach(function(element){ console.log(element) });
      * => 1
@@ -59,7 +85,9 @@ class List extends Array {
      * @returns {any}
      * @returns {List}
      * @example
-     * let myList = new Iguana.List(1, 2, "foo", "bar", "fizz", 3);
+     * const ig = require('./src/iguana.js')
+     * iguana = new ig();
+     * let myList = new iguana.List(1, 2, "foo", "bar", "fizz", 3);
      * console.log(myList.shuffle())
      * => "foo"
      * // If shuffle is given a number as a parameter
@@ -108,7 +136,13 @@ class HTTP {
     constructor(server) {
         this.server = server;
 
-        let isNode = function(){try {return this===global;}catch(e){return false;}};
+        let isNode = function() {
+            try {
+                return this === global;
+            } catch (e) {
+                return false;
+            }
+        };
         if (isNode()) {
             throw new Error("HTTP Class not availiable in a node environment.");
         }
@@ -174,5 +208,4 @@ class HTTP {
         });
     }
 }
-
-module.exports = Iguana;
+if(isNode()){module.exports = Iguana}
