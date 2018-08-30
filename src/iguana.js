@@ -53,12 +53,16 @@ class List extends Array {
          * => "foo"
          * => "bar"
          */
-        this.origin = [];
+        let origin_place = [];
         for (let i = 0; i < arguments.length; i++) {
             this[i] = arguments[i];
-            this.origin.push(arguments[i]);
+            origin_place.push(arguments[i]);
 
         }
+        Object.defineProperty(this, "origin", {
+            value: origin_place,
+            writable: false
+        });
     }
     /**
      * this.delete
