@@ -39,7 +39,9 @@ class List extends Array {
     constructor() {
         super();
         /**
-         * List.origin
+         * @prop
+         * @readonly
+         * @alias origin
          * @desc a List containing all of the elements added at the start of the list
          * @example
          * const ig = require('iguana')
