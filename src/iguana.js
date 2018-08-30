@@ -27,6 +27,7 @@ const isNode = function() {
 
 /**
  * List class
+ * @namespace List
  * @example
  * const ig = require('iguana')
  * iguana = new ig();
@@ -38,11 +39,19 @@ const isNode = function() {
 class List extends Array {
     constructor() {
         super();
+
+        let origin_place = [];
+        for (let i = 0; i < arguments.length; i++) {
+            this[i] = arguments[i];
+            origin_place.push(arguments[i]);
+
+        }
         /**
-         * @prop
          * @readonly
-         * @alias origin
-         * @desc a List containing all of the elements added at the start of the list
+         * @name origin
+         * @memberof List
+         * @instance
+         * @desc a List containing all of the elements added at the start of a list
          * @example
          * const ig = require('iguana')
          * iguana = new ig();
@@ -55,12 +64,6 @@ class List extends Array {
          * => "foo"
          * => "bar"
          */
-        let origin_place = [];
-        for (let i = 0; i < arguments.length; i++) {
-            this[i] = arguments[i];
-            origin_place.push(arguments[i]);
-
-        }
         Object.defineProperty(this, "origin", {
             value: origin_place,
             writable: false
@@ -68,6 +71,8 @@ class List extends Array {
     }
     /**
      * this.delete
+     * @memberof List
+     * @instance
      * @description This function removes an element from a list
      * @returns void.
      * @example
@@ -86,6 +91,8 @@ class List extends Array {
 
     /**
      * this.shuffle
+     * @memberof List
+     * @instance
      * @description This function returns a random element from a List.
      * @param {number} num optional parameter, if given this function will return a new List with randomized elements this parameter will define the number of elements that will be in the shuffled list.
      * @returns {any}
