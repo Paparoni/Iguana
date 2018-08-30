@@ -1,35 +1,34 @@
 {
-  "name": "iguana",
-  "version": "1.0.3",
-  "description": "A javascript libary created to ease the development process.",
-  "main": "dist/iguana.min.js",
-  "scripts": {
-    "test": "jshint src/iguana.js",
-    "pre_build": "minify src -d dist",
-    "mid_build": "/home/ubuntu/.nvm/versions/node/v6.11.2/lib/node_modules/documentation/bin/documentation.js build src/** -f html -o docs",
-    "post_build": "node build.js",
-    "build": "npm run pre_build && npm run mid_build && npm run post_build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Paparoni/iguana.git"
-  },
-  "keywords": [
-    "javascript",
-    "newt",
-    "library",
-    "easy",
-    "lightweight"
-  ],
-  "author": "Antwaun Tune",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Paparoni/iguana/issues"
-  },
-  "homepage": "https://github.com/Paparoni/iguana#readme",
-
-  "devDependencies": {
-    "babel-minify": "^0.4.3",
-    "jshint": "^2.9.6"
-  }
+    "name": "iguana",
+    "version": "1.0.4",
+    "description": "A javascript libary created to ease the development process.",
+    "main": "dist/iguana.min.js",
+    "scripts": {
+        "test": "jshint src/iguana.js",
+        "pre_build": "minify src -d dist",
+        "mid_build": "/home/ubuntu/.nvm/versions/node/v6.11.2/lib/node_modules/documentation/bin/documentation.js build src/** -f html -o docs",
+        "post_build": "node build.js",
+        "build": "npm run pre_build && npm run mid_build && npm run post_build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Paparoni/iguana.git"
+    },
+    "keywords": [
+        "javascript",
+        "newt",
+        "library",
+        "easy",
+        "lightweight"
+    ],
+    "author": "Antwaun Tune",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Paparoni/iguana/issues"
+    },
+    "homepage": "https://github.com/Paparoni/iguana#readme",
+    "devDependencies": {
+        "babel-minify": "^0.4.3",
+        "jshint": "^2.9.6"
+    }
 }
