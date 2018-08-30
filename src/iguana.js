@@ -151,6 +151,7 @@ class HTTP {
      * this.request
      * @description This function performs an asyncronous http get request on the {server}
      * @async
+     * @returns {promise}
      * @param {object} header optional parameter to attach a header to the request
      * @example
      * let myHttp = new Iguana.HTTP("https://jsonplaceholder.typicode.com/todos/1");
