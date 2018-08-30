@@ -208,4 +208,4 @@ class HTTP {
         });
     }
 }
-if(isNode()){module.exports = Iguana}
+if(isNode()){module.exports = Iguana};
