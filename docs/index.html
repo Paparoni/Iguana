@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>iguana 0.0.8 | Documentation</title>
+  <title>iguana 0.0.9 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>iguana</h3>
-          <div class='mb1'><code>0.0.8</code></div>
+          <div class='mb1'><code>0.0.9</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -162,7 +162,7 @@ Returns true or false whether the enviroment is NodeJS</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
 iguana = <span class="hljs-keyword">new</span> ig();
 <span class="hljs-built_in">console</span>.log(iguana.isNode());
 =&gt; <span class="hljs-literal">true</span></pre>
@@ -226,7 +226,7 @@ iguana = <span class="hljs-keyword">new</span> ig();
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
 iguana = <span class="hljs-keyword">new</span> ig();
 <span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 <span class="hljs-built_in">console</span>.log(myList[<span class="hljs-number">0</span>]);
@@ -280,7 +280,7 @@ iguana = <span class="hljs-keyword">new</span> ig();
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
 iguana = <span class="hljs-keyword">new</span> ig();
 <span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 myList.push(<span class="hljs-string">"fizz"</span>);
@@ -364,7 +364,7 @@ myList.origin.forEach(<span class="hljs-function"><span class="hljs-keyword">fun
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
 iguana = <span class="hljs-keyword">new</span> ig();
 <span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
 myList.delete(<span class="hljs-string">"bar"</span>);
@@ -453,7 +453,7 @@ myList.forEach(<span class="hljs-function"><span class="hljs-keyword">function</
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/iguana.js'</span>)
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
 iguana = <span class="hljs-keyword">new</span> ig();
 <span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>, <span class="hljs-string">"fizz"</span>, <span class="hljs-number">3</span>);
 <span class="hljs-built_in">console</span>.log(myList.shuffle())

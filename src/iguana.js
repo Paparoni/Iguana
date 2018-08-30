@@ -10,7 +10,7 @@ class Iguana {
  * Returns true or false whether the enviroment is NodeJS
  * @returns {boolean}
  * @example
- * const ig = require('./src/iguana.js')
+ * const ig = require('iguana')
  * iguana = new ig();
  * console.log(iguana.isNode());
  * => true
@@ -28,7 +28,7 @@ const isNode = function() {
 /**
  * List class
  * @example
- * const ig = require('./src/iguana.js')
+ * const ig = require('iguana')
  * iguana = new ig();
  * let myList = new iguana.List(1, 2, "foo", "bar");
  * console.log(myList[0]);
@@ -42,7 +42,7 @@ class List extends Array {
          * List.origin
          * @desc a List containing all of the elements added at the start of the list
          * @example
-         * const ig = require('./src/iguana.js')
+         * const ig = require('iguana')
          * iguana = new ig();
          * let myList = new iguana.List(1, 2, "foo", "bar");
          * myList.push("fizz");
@@ -65,7 +65,7 @@ class List extends Array {
      * @description This function removes an element from a list
      * @returns void.
      * @example
-     * const ig = require('./src/iguana.js')
+     * const ig = require('iguana')
      * iguana = new ig();
      * let myList = new iguana.List(1, 2, "foo", "bar");
      * myList.delete("bar");
@@ -85,7 +85,7 @@ class List extends Array {
      * @returns {any}
      * @returns {List}
      * @example
-     * const ig = require('./src/iguana.js')
+     * const ig = require('iguana')
      * iguana = new ig();
      * let myList = new iguana.List(1, 2, "foo", "bar", "fizz", 3);
      * console.log(myList.shuffle())
