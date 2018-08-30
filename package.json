@@ -1,6 +1,6 @@
 {
   "name": "iguana",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A javascript libary created to ease the development process.",
   "main": "dist/iguana.min.js",
   "scripts": {
@@ -27,10 +27,9 @@
     "url": "https://github.com/Paparoni/iguana/issues"
   },
   "homepage": "https://github.com/Paparoni/iguana#readme",
-  "dependencies": {
-    "jshint": "^2.9.6"
-  },
+
   "devDependencies": {
-    "babel-minify": "^0.4.3"
+    "babel-minify": "^0.4.3",
+    "jshint": "^2.9.6"
   }
 }
