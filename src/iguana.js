@@ -88,6 +88,39 @@ class List extends Array {
     delete(element) {
         this.splice(this.indexOf(element), 1);
     }
+    /**
+     * this.limit
+     * @memberof List
+     * @instance
+     * @description Sets a limit an element can be present in a list and deletes the excess
+     * @param {element} e any element present in the list
+     * @param {number} n limit amount, the amount of the element that should be present in the list.
+     * @returns void.
+     * @example
+     * const ig = require('iguana')
+     * iguana = new ig();
+     * let myList = new iguana.List(1, 2, 3, 3, 3, 4);
+     * myList.limit(3, 1);
+     * myList.forEach(function(element){ console.log(element) });
+     * => 1
+     * => 2
+     * => 3
+     * => 4
+     */
+    limit(e, n){
+        let c = 0;
+        this.forEach(function(x){
+            if (x == e){
+                c++
+            }
+        })
+        if (c > n){
+            let removeAmt = Math.abs(c - n)
+            for(let i = 0; i < removeAmt; i++){
+                this.delete(e)
+            }
+        }
+    }
 
     /**
      * this.shuffle
@@ -220,6 +253,37 @@ class HTTP {
             http.send(null);
 
         });
+    }
+    post(params, header){
+        let url = this.server;
+        header = header || {};
+        params = params || '';
+        return new Promise(function(success, error){
+            let http = new XMLHttpRequest();
+            http.open("POST", url, true);
+            if (Object.keys(header).length !== 0) {
+                let h = "";
+                let v = "";
+                for (let key in Object.keys(header)) {
+                    h = key;
+                    v = header[key];
+                }
+                http.setRequestHeader(h, v);
+            }
+          http.onreadystatechange = function() {
+            if(http.readyState == 4 && http.status == 200){
+                success(http.responseText);
+            }
+            http.onerror = function(e){
+                error(new Error("Error submitting post request "));
+            };
+        };
+        if(params.length > 0){
+            http.send(params)
+        }
+        });
+
+        
     }
 }
 if (isNode()) {
