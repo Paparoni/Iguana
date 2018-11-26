@@ -111,13 +111,13 @@ class List extends Array {
         let c = 0;
         this.forEach(function(x){
             if (x == e){
-                c++
+                c++;
             }
-        })
+        });
         if (c > n){
-            let removeAmt = Math.abs(c - n)
+            let removeAmt = Math.abs(c - n);
             for(let i = 0; i < removeAmt; i++){
-                this.delete(e)
+                this.delete(e);
             }
         }
     }
@@ -279,7 +279,7 @@ class HTTP {
             };
         };
         if(params.length > 0){
-            http.send(params)
+            http.send(params);
         }
         });
 
