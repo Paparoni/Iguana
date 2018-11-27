@@ -121,7 +121,32 @@ class List extends Array {
             }
         }
     }
-
+    /**
+     * this.intersection
+     * @memberof List
+     * @instance
+     * @description Returns the intersection of the two given objects, returns a List of the elements that are commmon in both Objects.
+     * @param {Object} object a List or an Array to intersect with
+     * @returns List
+     * @example
+     * const ig = require('iguana')
+     * iguana = new ig();
+     * let myList = new iguana.List(1, 2, 3, 4, 6, 8, 10);
+     * let mySecondList = new iguana.List(5, 3, 4, 2, 12)
+     * console.log(myList.intersection(mySecondList))
+     * => List [3, 4, 2]
+     */
+    intersection(object){
+        let r = new List();
+        let list = this;
+        object.forEach(function(v){
+            if(list.includes(v)){
+                r.push(v);
+            }
+        });
+        return r;
+        
+    }
     /**
      * this.shuffle
      * @memberof List

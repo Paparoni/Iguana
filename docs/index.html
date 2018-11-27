@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>iguana 1.0.5 | Documentation</title>
+  <title>iguana 1.0.7 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>iguana</h3>
-          <div class='mb1'><code>1.0.5</code></div>
+          <div class='mb1'><code>1.0.7</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -64,6 +64,12 @@
                         href='#listlimit'
                         class='regular pre-open'>
                         #limit
+                      </a></li>
+                      
+                      <li><a
+                        href='#listintersection'
+                        class='regular pre-open'>
+                        #intersection
                       </a></li>
                       
                       <li><a
@@ -464,6 +470,87 @@ myList.forEach(<span class="hljs-function"><span class="hljs-keyword">function</
 =&gt; <span class="hljs-number">2</span>
 =&gt; <span class="hljs-number">3</span>
 =&gt; <span class="hljs-number">4</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='listintersection'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>intersection(object)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Returns the intersection of the two given objects, returns a List of the elements that are commmon in both Objects.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>intersection(object: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    a List or an Array to intersect with
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        List
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iguana'</span>)
+iguana = <span class="hljs-keyword">new</span> ig();
+<span class="hljs-keyword">let</span> myList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>);
+<span class="hljs-keyword">let</span> mySecondList = <span class="hljs-keyword">new</span> iguana.List(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">12</span>)
+<span class="hljs-built_in">console</span>.log(myList.intersection(mySecondList))
+=&gt; List [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>]</pre>
     
   
 
