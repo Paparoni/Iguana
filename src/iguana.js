@@ -148,6 +148,35 @@ class List extends Array {
         
     }
     /**
+     * this.difference
+     * @memberof List
+     * @instance
+     * @description Returns a List that contains the elements that are present in one list but not in the other.
+     * @param {Object} object a List or an Array
+     * @returns List
+     * @example
+     * const ig = require('iguana')
+     * iguana = new ig();
+     * const iguana = new Iguana();
+     * let A = new iguana.List(10, 20, 30, 40, 80);
+     * let B = new iguana.List(100, 30, 80, 40, 60);
+     * console.log(A.difference(B))
+     * console.log(B.difference(A))
+     * => List [ 10, 20 ]
+     * => List [ 100, 60 ]
+     */
+    difference(object){
+        let r = new List();
+        let list = this;
+        list.forEach(function(v){
+            if(list.includes(v) && !object.includes(v)){
+                r.push(v);
+            }
+        });
+        return r;
+        
+    }
+    /**
      * this.shuffle
      * @memberof List
      * @instance
